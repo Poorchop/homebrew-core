@@ -47,7 +47,8 @@ class W3m < Formula
     ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
 
     system "./configure", "--prefix=#{prefix}",
-                          "--disable-image",
+                          "--enable-image",
+                          "--enable-gopher",
                           "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}"
     system "make", "install"
   end
